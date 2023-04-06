@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+</head>
+<body>
+<div class="father">
+    <div class="son">儿子</div>
+</div>
+<div class="nav">
+    <p>这是p1</p>
+    <div>
+        <p>这是p2</p>
+    </div>
+</div>
+<script>
+    $(function () {
+        //$('').parent()-查找父辈
+        console.log($('.son').parent());
+
+        //$("ul").find("li"); 相当于$("ul li"),后代选择器
+        $('.nav').find("p").css('color', 'blue');
+
+        //$("ul").children("li") 相当于$("ul>li")，最近一级（亲儿子)
+        $('.nav').children("p").css('color', 'pink');
+    })
+
+</script>
+</body>
+</html>

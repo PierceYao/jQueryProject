@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        //on(events,[selector],[data],fn)--在选择元素上绑定一个或多个事件的事件处理函数。
+        //events:一个或多个用空格分隔的事件类型和可选的命名空间，如"click"或"keydown.myPlugin"。
+        //selector:一个选择器字符串用于过滤器的触发事件的选择器元素的后代。如果选择的< null或省略，当它到达选定的元素，事件总是触发。
+        //data:当一个事件被触发时要传递event.data给事件处理函数。
+        //fn:该事件被触发时执行的函数。 false 值也可以做一个函数的简写，返回false。
+        $(function () {
+            //处理不同事件
+            $('div').on({
+                mouseenter: function () {
+                    $(this).css('background', 'blue');
+                }, click: function () {
+                    $(this).css('background', 'green');
+                }, mouseleave: function () {
+                    $(this).css('background', 'red');
+                }
+            });
+
+            //处理相同事件
+            $('div').on('mouseenter mouseleave', function () {
+                $(this).toggleClass('current');
+            });
+        })
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

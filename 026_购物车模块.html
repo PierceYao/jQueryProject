@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 200px;
+            height: 150px;
+            text-align: center;
+            font-size: 12px;
+            margin: 100px auto;
+            border-collapse: collapse;
+        }
+
+        th {
+            color: black;
+            background-color: #00a4ff;
+        }
+
+        table, th, td {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        //
+        $(function () {
+            $('th>input').change(function () {
+                $('td>input').prop('checked', $(this).prop('checked'));
+            })
+
+            $('td>input').change(function () {
+                if ($('td>input:checked').length === $('td>input').length) {
+                    $('th>input').prop('checked', true);
+                } else {
+                    $('th>input').prop('checked', false);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <th><input type="checkbox"></th>
+        <th>商品</th>
+        <th>价钱</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>iPhone8</td>
+        <td>8000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>iPad Pro</td>
+        <td>5000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>iPad Air</td>
+        <td>2000</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>Apple Watch</td>
+        <td>2000</td>
+    </tr>
+</table>
+</body>
+</html>

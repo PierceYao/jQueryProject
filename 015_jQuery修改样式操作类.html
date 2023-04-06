@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all .5s;
+        }
+
+        .current {
+            background-color: red;
+            transform: rotate(360deg);
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            $('div').click(function () {
+                //添加类addClass('current')
+                $(this).addClass('current');
+
+                //删除类
+                $(this).removeClass('current');
+
+                //切换类
+                $(this).toggleClass('current');
+            })
+        })
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

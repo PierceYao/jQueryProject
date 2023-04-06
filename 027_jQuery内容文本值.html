@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            //获取设置元素内容html()--相当于innerHTML
+            console.log($('div').html());
+            $('div').html(123);
+
+            //获取设置元素文本内容text()--相当于innerText
+            console.log($('div').text());
+            $('div').text(123);
+
+            //获取设置表单值val()--相当于value
+            console.log($('input').val());
+            $('input').val(123);
+        })
+    </script>
+</head>
+<body>
+<div><span>这是内容</span></div>
+<input type="text" value="请输入内容">
+</body>
+</html>

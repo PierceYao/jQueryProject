@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            //阻止事件冒泡
+            $(document).on('click', function (evt) {
+                console.log('点击了document');
+            });
+
+            $('div').on('click', function (evt) {
+                console.log('点击了div');
+                evt.stopPropagation();
+            });
+
+            //阻止默认行为
+            $('a').on('click', function (evt) {
+                evt.preventDefault();
+            });
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<a href="https://www.baidu.com/">百度</a>
+</body>
+</html>

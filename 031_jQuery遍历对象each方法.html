@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            //1.each()方法遍历匹配的每一个元素。主要用DOM处理。each每一个
+            //2.里面的回调函数有2个参数:index是每个元素的索引号; demEle是每个DOM元素对象，不是jquery对象
+            //3.所以要想使用jquery方法，需要给这个dom元素转换为jquery对象$(domEle)
+
+            //each()方法遍历元素--遍历DOM对象
+            var arr = ['red', 'green', 'blue'];
+            $('div').each(function (i, demEle) {
+                // console.log(i);
+                // console.log(demEle);
+                $(demEle).css('color', arr[i]);
+            });
+
+            //$.each()方法遍历元素 与要用于遍历数据，处理数据--遍历数据
+            $.each($(arr), function (i, ele) {
+                console.log(i);
+                console.log(ele);
+            })
+        })
+    </script>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+</body>
+</html>

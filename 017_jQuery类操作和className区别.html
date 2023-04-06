@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all .5s;
+        }
+
+        .two {
+            transform: rotate(720deg);
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        //覆盖原类名
+        window.addEventListener('load', function () {
+            var one = document.querySelector('.one');
+            one.className = 'two';
+        })
+
+        //追加类
+        $(function () {
+            $('.one').addClass('two');
+        })
+    </script>
+</head>
+<body>
+<div class="one"></div>
+</body>
+</html>

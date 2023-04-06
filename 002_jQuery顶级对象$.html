@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    //1.$是jQuery的别称
+    $('div').hide();
+    jQuery('div').hide();
+
+    //2.$也是jQuery的顶级对象
+    $(function () {
+        $('div').hide();
+    })
+</script>
+</body>
+</html>

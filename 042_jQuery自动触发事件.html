@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            $('div').on('click', function () {
+                alert('已点击');
+            });
+
+            //自动触发事件
+            //1.元素.事件
+            $('div').click();
+
+            //2.元素.trigger('事件')
+            $('div').trigger('click');
+
+            //3.元素.triggerHandler('事件')--不会触发元素的默认行为
+            $('div').triggerHandler('click');
+
+            $('input').on('focus', function () {
+                $('input').val('hello');
+            });
+            $('input').trigger('focus');//光标会被选中
+            $('input').triggerHandler('focus');//光标不会被选中
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<input type="text">
+</body>
+</html>

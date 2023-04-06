@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .w {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        header {
+            height: 100px;
+            background-color: #30f3f4;
+        }
+
+        nav {
+            margin: 20px 0;
+            height: 100px;
+            background-color: #ff3040;
+        }
+
+        .wrap_con {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap_con > div {
+            width: 100%;
+            height: 500px;
+            margin-bottom: 20px;
+            font-size: 30px;
+            text-align: center;
+            font-weight: 700;
+            line-height: 500px;
+            color: #fff;
+        }
+
+        .con1 {
+            background-color: #333;
+        }
+
+        .con2 {
+            background-color: #555;
+        }
+
+        .con3 {
+            background-color: #777;
+        }
+
+        .con4 {
+            background-color: #999;
+        }
+
+        .con5 {
+            background-color: #aaa;
+        }
+
+        footer {
+            height: 500px;
+            background-color: #3040ff;
+        }
+
+        .slide_nav {
+            display: none;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 100px;
+        }
+
+        .slide_nav span {
+            float: left;
+            width: 80%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #ff3040;
+            color: #fff;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            var flag = true;
+            $(window).scroll(function () {
+                if ($(document).scrollTop() >= $('.con1').offset().top) {
+                    $('.slide_nav').fadeIn();
+                } else {
+                    $('.slide_nav').fadeOut();
+                }
+
+                if (flag) {
+                    $('.wrap_con div').each(function (i, e) {
+                        if ($(document).scrollTop() >= $(e).offset().top) {
+                            $('.slide_nav span').eq(i).addClass('active').stop().siblings().removeClass('active');
+                        }
+                    });
+                }
+            });
+
+            $('.slide_nav span').click(function () {
+                flag = false;
+                var index = $(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                $('body,html').stop().animate({
+                    scrollTop: $('.wrap_con div').eq(index).offset().top
+                }, 500, function () {
+                    flag = true;
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<!-- 版心 -->
+<div class="w">
+
+    <!-- 头部 -->
+    <header>
+        header
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        nav
+    </nav>
+
+    <!-- 电梯层 -->
+    <div class="wrap">
+        <div class="wrap_con">
+            <div class="con1">con1</div>
+            <div class="con2">con2</div>
+            <div class="con3">con3</div>
+            <div class="con4">con4</div>
+            <div class="con5">con5</div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        footer
+    </footer>
+
+    <!-- 电梯遥控器 -.-     -->
+    <div class="slide_nav">
+        <span class="active">con1</span>
+        <span>con2</span>
+        <span>con3</span>
+        <span>con4</span>
+        <span>con5</span>
+    </div>
+</div>
+</body>
+</html>

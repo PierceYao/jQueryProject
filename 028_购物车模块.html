@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .content, .footer {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .header ul li, .content ul li {
+            float: left;
+            list-style: none;
+            width: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        /* 清除浮动 */
+
+        .clear {
+            clear: both
+        }
+
+        .li2 {
+            width: 200px;
+        }
+
+        button {
+            padding: 0 5px;
+        }
+
+        .sec {
+            width: 30px;
+            text-align: center;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            $('.header input').change(function () {
+                $('.content input').prop('checked', $(this).prop('checked'));
+            })
+
+            $('.content input').change(function () {
+                if ($('.content input:checked').length === $('.content input').length) {
+                    $('.header input').prop('checked', true);
+                } else {
+                    $('.header input').prop('checked', false);
+                }
+            })
+
+            $('.thi').click(function () {
+                var num = $(this).siblings('.sec').val();
+                var price = $(this).parent().siblings().children('.price').html();
+                num++;
+                $(this).siblings('.sec').val(num);
+                $(this).parent().siblings().children('.total').html(price * num);
+            })
+
+            $('.fir').click(function () {
+                var num = $(this).siblings('.sec').val();
+                var price = $(this).parent().siblings().children('.price').html();
+                num--;
+                if (num <= 0) {
+                    $(this).siblings('.sec').val(0);
+                    $(this).parent().siblings().children('.total').html(0);
+                } else {
+                    $(this).siblings('.sec').val(num);
+                    $(this).parent().siblings().children('.total').html(price * num);
+                }
+            })
+
+            $('.sec').change(function () {
+                var num = $(this).val();
+                var price = $(this).parent().siblings().children('.price').html();
+                $(this).parent().siblings().children('.total').html(price * num);
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li><input type="checkbox">全选</li>
+        <li class='li2'>商品图片</li>
+        <li>数量</li>
+        <li>单价</li>
+        <li>商品名称</li>
+        <li>小计</li>
+        <li>操作</li>
+    </ul>
+    <div class='clear'></div>
+</div>
+<div class='content'>
+    <ul>
+        <li><input type="checkbox"></li>
+        <li class='li2'><img src="./images/哈苏 907X 周年纪念套装.webp" width="100"></li>
+        <li>
+            <button class="fir">-</button>
+            <input type="text" class="sec" value="1">
+            <button class="thi">+</button>
+        </li>
+        <li>￥<span class="price">117000.00</span></li>
+        <li>数码相机</li>
+        <li>￥<span class="total">117000.00</span></li>
+        <li>
+            <button>删除</button>
+        </li>
+        <div class='clear'></div>
+    </ul>
+    <ul>
+        <li><input type="checkbox"></li>
+        <li class="li2"><img src="./images/GoPro HERO10 Black 运动相机.webp" width="100"></li>
+        <li>
+            <button class="fir">-</button>
+            <input type="text" class="sec" value="1">
+            <button class="thi">+</button>
+        </li>
+        <li>￥<span class="price">2698.00</span></li>
+        <li>家用相机</li>
+        <li>￥<span class="total">2698.00</span></li>
+        <li>
+            <button>删除</button>
+        </li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<div class='footer'>
+    <button>全删</button>
+    <button>添加商品</button>
+    已选商品总计：￥<span>00.00</span>
+    店铺合计：￥<span>00.00</span>
+</div>
+</body>
+</html>

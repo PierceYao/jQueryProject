@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            overflow: hidden;
+            margin: 100px;
+        }
+
+        .son {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            left: 10px;
+            top: 10px;
+        }
+
+        .w {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 0 auto 200px;
+            padding: 50px;
+            border: 15px solid red;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            //1.offset()设置或获取元素偏移
+            //offset()方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系
+            //该方法有2个属性left、top。offset().top 用于获取距离文档顶部的距离，offset().left用于获取距离文档左侧的距离.
+            //可以设置元素的偏移:offset({top:10,left:30})
+            console.log($('.son').offset());//得到一个对象
+            console.log($('.son').offset().top);
+            console.log($('.son').offset().left);
+
+            //2.position()获取元素偏移
+            console.log($('.son').position());//得到一个对象
+            console.log($('.son').position().top);
+            console.log($('.son').position().left);
+        })
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<div class="w"></div>
+</body>
+</html>

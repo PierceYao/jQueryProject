@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper {
+            width: 250px;
+            height: 248px;
+            margin: 100px auto 0;
+            border: 1px solid pink;
+            border-right: 0;
+            overflow: hidden;
+        }
+
+        #left,
+        #content {
+            float: left;
+        }
+
+        #left li {
+            background-color: #b0b0b0;
+        }
+
+        #left li a {
+            display: block;
+            width: 48px;
+            height: 27px;
+            border-bottom: 1px solid pink;
+            line-height: 27px;
+            text-align: center;
+            color: black;
+        }
+
+        #left li a:hover {
+            background-color: red;
+        }
+
+        #content {
+            border-left: 1px solid pink;
+            border-right: 1px solid pink;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            $('#left li').mouseenter(function () {
+                var index = $(this).index();
+                $('#content div').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <ul id="left">
+        <li><a href="#">关爱心X13 Pro</a></li>
+        <li><a href="#">OPPO K9x</a></li>
+        <li><a href="#">荣耀X40</a></li>
+        <li><a href="#">Apple iPhone 14 Pro</a></li>
+        <li><a href="#">荣耀80</a></li>
+        <li><a href="#">小米13</a></li>
+        <li><a href="#">Redmi Note 11</a></li>
+        <li><a href="#">乐视Letv Y1Pro+</a></li>
+        <li><a href="#">HUAWEI Mate 50</a></li>
+    </ul>
+    <div id="content">
+        <div>
+            <a href="#"><img src="images/1.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/2.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/3.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/4.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/5.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/6.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/7.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/8.jpg" width="200" height="250"/></a>
+        </div>
+        <div>
+            <a href="#"><img src="images/9.jpg" width="200" height="250"/></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

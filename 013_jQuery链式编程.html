@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+<script>
+    $(function () {
+        $('button').click(function () {
+            $(this).css('background', 'pink').siblings().css('background', '');
+        })
+    })
+</script>
+</body>
+</html>

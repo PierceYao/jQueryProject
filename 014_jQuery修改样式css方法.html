@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            console.log($('div').css('width'));
+            $('div').css('height', '400px').css({'color': 'white', 'font-size': '24px'});
+        })
+    </script>
+</head>
+<body>
+<div>这是div</div>
+</body>
+</html>

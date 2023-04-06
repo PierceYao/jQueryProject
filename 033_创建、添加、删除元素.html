@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            //创建元素
+            var li = $('<li>新建的li</li>');
+            var div = $('<div>新建的div</div>');
+
+            //添加元素
+            //1.内部添加，放到内容的最后面，append()
+            $('ul').append(li);
+            //2.内部添加，放到内容的最前面，prepend()
+            $('ul').prepend(li);
+            //3.外部添加，放到内容的最后面，after()
+            $('div').after(div);
+            //4.外部添加，放到内容的最前面，before()
+            $('div').before(div);
+
+            //删除元素
+            //1.删除匹配的元素
+            $('ul').remove();
+            //2.删除匹配的元素的子节点
+            $('ul').empty();
+            $('ul').html('');
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>原来的li</li>
+</ul>
+<div>原来的div</div>
+</body>
+</html>

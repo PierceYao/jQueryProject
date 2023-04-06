@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .box {
+            position: absolute;
+            width: 780px;
+            height: 520px;
+            padding: 5px;
+            border: 2px solid white;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* 弹性盒子 */
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .box .pic1 {
+            width: 250px;
+            height: 250px;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            $('div').hover(function () {
+                $(this).siblings().stop().fadeTo('slow', .66);
+            }, function () {
+                $(this).siblings().stop().fadeTo('slow', 1);
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="pic1"><img src="images/1.jpg" alt=""></div>
+    <div class="pic1"><img src="images/2.jpg" alt=""></div>
+    <div class="pic1"><img src="images/3.jpg" alt=""></div>
+    <div class="pic1"><img src="images/4.jpg" alt=""></div>
+    <div class="pic1"><img src="images/5.jpg" alt=""></div>
+    <div class="pic1"><img src="images/6.jpg" alt=""></div>
+</div>
+</body>
+</html>

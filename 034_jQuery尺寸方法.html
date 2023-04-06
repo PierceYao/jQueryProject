@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 15px solid red;
+            margin: 20px;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            //width() / height()        取得匹配元素宽度和高度值 只算 width / height
+            console.log($('div').width());
+            console.log($('div').height());
+
+            //innerWidth() / innerHeight()        取得匹配元素宽度和高度值 包含 padding
+            console.log($('div').innerWidth());
+            console.log($('div').innerHeight());
+
+            //outerWidth() / outerHeight()        取得匹配元素宽度和高度值 包含 padding 、border
+            console.log($('div').outerWidth());
+            console.log($('div').outerHeight());
+
+            //outerWidth(true) / outerHeight(true)        取得匹配元素宽度和高度值 包含 padding 、border、margin
+            console.log($('div').outerWidth(true));
+            console.log($('div').outerHeight(true));
+        })
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

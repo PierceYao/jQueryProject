@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            //$.extend([d],tgt,obj1,[objN]) 用一个或多个其他对象来扩展一个对象，返回被扩展的对象。
+            //target:一个对象，如果附加的对象被传递给这个方法将那么它将接收新的属性，如果它是唯一的参数将扩展jQuery的命名空间。
+            //object1:待合并到第一个对象的对象。
+            //objectN:待合并到第一个对象的对象。
+            var target = {
+                id: 0,
+                msg: {
+                    sex: 'male'
+                }
+            };
+            var obj = {
+                id: 1,
+                name: 'Andy',
+                msg: {
+                    age: 18
+                }
+            }
+            //浅拷贝--把被拷贝的对象复杂数据类型中的地址拷贝给目标对象，修改目标对象会影响被拷贝对象
+            $.extend(target, obj);
+            target.msg.age = 20;
+            console.log(target);
+            console.log(obj);
+
+            //深拷贝--前面加true，完全克隆(拷贝的对象,而不是地址)，修改目标对象不会影响被拷贝对象
+            $.extend(true, target, obj);
+            target.msg.age = 20;
+            console.log(target);
+            console.log(obj);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

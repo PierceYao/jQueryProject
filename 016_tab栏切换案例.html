@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1000px;
+            height: 500px;
+            margin: 100px auto;
+        }
+
+        .boxHead {
+            width: 1000px;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            border-bottom: 2px solid red;
+            background-color: #eeeeee;
+        }
+
+        li {
+            width: 120px;
+            height: 45px;
+            float: left;
+            /*margin: 2px 25px;*/
+            text-decoration: none;
+            white-space: nowrap;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .boxHead .checked {
+            color: #fff;
+            background-color: #c81623;
+        }
+
+        .item {
+            display: none;
+        }
+    </style>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            $('.boxHead li').mouseenter(function () {
+                var index = $(this).index();
+                $('.boxHead li').eq(index).toggleClass('checked').siblings().removeClass('checked');
+                $('.boxBody div').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="boxHead">
+        <ul>
+            <li class="checked">商品介绍</li>
+            <li>规格与包装</li>
+            <li>售后保障</li>
+            <li>商品评价(50000)</li>
+            <li>手机社区</li>
+        </ul>
+    </div>
+    <div class="boxBody">
+        <div class="item" style="display: block">商品介绍内容模块</div>
+        <div class="item">规格与包装内容模块</div>
+        <div class="item">售后保障内容模块</div>
+        <div class="item">商品评价内容模块</div>
+        <div class="item">手机社区内容模块</div>
+    </div>
+</div>
+</body>
+</html>

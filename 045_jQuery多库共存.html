@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            function $(e) {
+                return document.querySelector(e);
+            }
+
+            console.log($('div'));
+            //更换jQuery
+            jQuery.each();
+
+            //释放$控制权，自己决定
+            var selfDefine = jQuery.noConflict();
+            console.log(selfDefine('span'));
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<span></span>
+</body>
+</html>

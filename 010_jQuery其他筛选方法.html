@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+</head>
+<body>
+<ol>
+    <li>这是ol的li</li>
+    <li>这是ol的li</li>
+    <li class="item">这是ol的li</li>
+    <li>这是ol的li</li>
+    <li>这是ol的li</li>
+    <li>这是ol的li</li>
+</ol>
+<ul>
+    <li>这是ul的li</li>
+    <li>这是ul的li</li>
+    <li>这是ul的li</li>
+    <li>这是ul的li</li>
+    <li>这是ul的li</li>
+    <li>这是ul的li</li>
+</ul>
+<div class="current">这是current</div>
+<div>这没有current</div>
+<script>
+    $(function () {
+        //$(".first").siblings("li"); 查找兄弟节点，不包括自己本身
+        $('ol .item').siblings().css('color', 'pink');
+
+        //$(".first"). nextAll() 查找当前元素之后所有的同辈元素
+        $('.item').nextAll().css('color', 'green');
+
+        //$(".last").prevAll() 查找当前元素之前所有的同辈元素
+        $('.item').prevAll().css('color', 'yellow');
+
+        //$('div').hasClass("protected") 检查当前的元素是否含有某个特定的类，如果有，则返回true
+        console.log($('li').hasClass("item"));
+
+        //$("li").eq(2); 相当于$("li:eq(2)"),index从0开始
+        $("li").eq(8).css('color', 'red');
+    })
+</script>
+</body>
+</html>

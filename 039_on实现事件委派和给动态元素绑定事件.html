@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(function () {
+            $('ul').on('click', 'li', function () {
+                alert('hello');
+            });
+
+            var li = $('<li>新建的li</li>');
+            $('ul').append(li);
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>原来的li</li>
+    <li>原来的li</li>
+    <li>原来的li</li>
+    <li>原来的li</li>
+    <li>原来的li</li>
+</ul>
+</body>
+</html>
